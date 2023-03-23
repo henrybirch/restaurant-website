@@ -31,7 +31,7 @@ module.exports = {
     open: true,
     hot: true,
     liveReload: true,
-    watchFiles: ["src/index.html"],
+    watchFiles: ["src/*"],
   },
   plugins: [
     new HtmlWebpackPlugin({
