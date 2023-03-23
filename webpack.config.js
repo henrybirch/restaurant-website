@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
+  target: "web",
   entry: "./src/index.ts",
   devtool: "inline-source-map",
   module: {
@@ -27,6 +28,16 @@ module.exports = {
     },
     compress: true,
     port: 9000,
+    open: true,
+    hot: true,
+    liveReload: true,
+    watchFiles: ["src/index.html"],
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "src/index.html",
+      title: "Restaurant",
+      filename: "index.html",
+    }),
+  ],
 };
